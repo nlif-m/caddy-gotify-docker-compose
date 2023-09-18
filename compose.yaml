@@ -1,0 +1,22 @@
+version: "3"
+services:
+  caddy:
+    build:
+      context: caddy
+    ports:
+      - "80:80"
+      - "443:443"
+    expose:
+      - "80"
+      - "443"
+  gotify:
+    image: ghcr.io/gotify/server
+    volumes:
+      - ./gotify-data:/app/data
+    expose:
+      - "80"
+    environment:
+      TZ: "Europe/Moscow"
+      GOTIFY_DEFAULTUSER_NAME: admin
+      GOTIFY_DEFAULTUSER_PASS: secret-key
+      

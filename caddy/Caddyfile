@@ -1,0 +1,3 @@
+gotify.example.org {
+	reverse_proxy gotify:80
+}
