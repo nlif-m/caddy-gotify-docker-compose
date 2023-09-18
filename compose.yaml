@@ -9,6 +9,7 @@ services:
     expose:
       - "80"
       - "443"
+    restart: always
   gotify:
     image: ghcr.io/gotify/server
     volumes:
@@ -19,4 +20,5 @@ services:
       TZ: "Europe/Moscow"
       GOTIFY_DEFAULTUSER_NAME: admin
       GOTIFY_DEFAULTUSER_PASS: secret-key
+    restart: always
       
