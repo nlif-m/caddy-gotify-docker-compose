@@ -1,4 +1,6 @@
 version: "3"
+volumes:
+  gotify-data:
 services:
   caddy:
     build:
@@ -13,7 +15,7 @@ services:
   gotify:
     image: ghcr.io/gotify/server
     volumes:
-      - ./gotify-data:/app/data
+      - gotify-data:/app/data
     expose:
       - "80"
     environment:
