@@ -12,6 +12,8 @@ services:
       - "$HTTP_PORT"
       - "$HTTPS_PORT"
     restart: always
+    depends_on:
+      - gotify
   gotify:
     image: ghcr.io/gotify/server
     volumes:
