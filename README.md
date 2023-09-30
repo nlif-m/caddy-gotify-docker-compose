@@ -3,11 +3,8 @@ A compose.yaml file for running [gotify](https://github.com/gotify/server) with 
 
 
 # Running
-Write `GOTIFY_DEFAULTUSER_PASS` in `compose.yaml`c.
-
+Adjust variables to your fit in `.env.example` file and rename it to `.env`.
 Change `gotify.example.org` in `caddy/Caddyfile` to your domain.
-
-Change `TZ` to your timezone.
 
 And run
 ``` shell

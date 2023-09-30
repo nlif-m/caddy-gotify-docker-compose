@@ -6,11 +6,11 @@ services:
     build:
       context: caddy
     ports:
-      - "80:80"
-      - "443:443"
+      - "$HTTP_PORT:80"
+      - "$HTTPS_PORT:443"
     expose:
-      - "80"
-      - "443"
+      - "$HTTP_PORT"
+      - "$HTTPS_PORT"
     restart: always
   gotify:
     image: ghcr.io/gotify/server
@@ -19,8 +19,7 @@ services:
     expose:
       - "80"
     environment:
-      TZ: "Europe/Moscow"
-      GOTIFY_DEFAULTUSER_NAME: admin
-      GOTIFY_DEFAULTUSER_PASS: secret-key
+      TZ: "$TZ"
+      GOTIFY_DEFAULTUSER_NAME: "$GOTIFY_DEFAULTUSER_NAME"
+      GOTIFY_DEFAULTUSER_PASS: "$GOTIFY_DEFAULTUSER_PASS"
     restart: always
-      
